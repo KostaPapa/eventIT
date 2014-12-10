@@ -1,11 +1,14 @@
 <div id="footer">
-    Copyright © Kostaq Papa
+    Copyright © Team B10
     <style>
-        #footer {
-            background-color:purple;
-            color:white;
-            text-align:center;
-            padding:5px;
-    }
+        #footer { 
+        	bottom: 0;
+        	position: fixed;
+        	background-color:purple; 
+        	color:white; 
+        	text-align:center;
+        	padding:5px; 
+        	margin-top: 2em;
+        }
     </style>
 </div>
