@@ -2,7 +2,7 @@
 require_once('mysql.php');
 session_start();
 
-$mysqli = NULL;
+//$mysqli = NULL;
 if (isset($_POST['email']) && isset($_POST['password'])) {
   if ($stmt = $mysqli -> prepare("SELECT name, email, school FROM student WHERE email=? AND password=?")) {
     $stmt -> bind_param("ss", $_POST['email'], hash("md5", $_POST['password']));

@@ -23,9 +23,7 @@
 			//print_r($date);
 			$stmt->execute();
 			$stmt->bind_result($cname, $ename, $edate, $location, $description);
-			$i = 0;
-			while($stmt->fetch() && $i < 4){
-				$i++;
+			while($stmt->fetch()){
 				if(strnatcmp($date, $edate) <= 0){
 					echo"<div class=\"col-lg-12 col-lg-offset-0 event\">";
 					echo"<div class=\"eventName\">$ename</div>";
@@ -41,6 +39,43 @@
 					echo"</div><!-- /.col-md-6 -->";
 				}
 			}
+			
+
 		?>
+		<ul class="items">
+				<li>content</li>
+				<li>content</li>
+				...
+			</ul>
+			<div id="lastPostsLoader"></div>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			function lastAddedLiveFunc()
+			{
+				$('div#lastPostsLoader').html('<img src="bigLoader.gif"/>');
+		 
+				$.get("loadmore.php", function(data){
+					if (data != "") {
+						//console.log('add data..');
+						$(".items").append(data);
+					}
+					$('div#lastPostsLoader').empty();
+				});
+			};
+		 
+			//lastAddedLiveFunc();
+			$(window).scroll(function(){
+		 
+				var wintop = $(window).scrollTop(), docheight = $(document).height(), winheight = $(window).height();
+				var  scrolltrigger = 0.95;
+		 
+				if  ((wintop/(docheight-winheight)) > scrolltrigger) {
+				 //console.log('scroll bottom');
+				 lastAddedLiveFunc();
+				}
+			});
+		});
+		</script>
+
   </div><!-- /.row --> 
 </div><!-- /.container --> 
