@@ -1,11 +1,11 @@
 <div class="container" >
   <div class="row">
 		<style>
- 			.event { background-color:#FFE5F9; margin-bottom: 10px;}
-			.eventName{ color: #601286; font-size: 40px; float: left;}
-			.clubName{color: white; font-size: 40px;background-color: #601286; float:right; margin-right: -15px; padding-left: 5px; padding-right: 5px;}
+ 			.event { background-color:#FFDEFF; margin-bottom: 10px;}
+			.eventName{ color: #78147F; font-size: 40px; float: left;}
+			.clubName{color: white; font-size: 40px;background-color: #78147F; float:right; margin-right: -15px; padding-left: 5px; padding-right: 5px;}
 			.clear{clear: both;}
-			.UpcomingHeading{color: #601286; font-size: 60px;font-weight: bold;}
+			.UpcomingHeading{color: #78147F; font-size: 60px;font-weight: bold;}
 			.floatRight{float:right;}
 		</style>	
 		<?php
