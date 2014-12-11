@@ -25,7 +25,7 @@
 			$stmt->bind_result($cname, $ename, $edate, $location, $description);
 			while($stmt->fetch()){
 				if(strnatcmp($date, $edate) <= 0){
-					echo"<div class=\"col-md-6 col-md-offset-3 col-lg-12 col-lg-offset-0 event\">";
+					echo"<div class=\"col-lg-12 col-lg-offset-0 event\">";
 					echo"<div class=\"eventName\">$ename</div>";
 					echo"<div class=\"clubName\">$cname</div>";
 					echo"<div class=\"clear\"></div>";

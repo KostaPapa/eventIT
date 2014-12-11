@@ -3,8 +3,8 @@
 		<style>
  			#nav { background-color:#78147F; }
         </style>
-		<div id="title"> <h1>event it</h1>
-            <style>	#title { color:white; text-align:left; padding:5px; } 
+		<div id="title"> <h1 style="font-size: 50px;">eventIT</h1>
+            <style>	#title { color:white; text-align:left; padding:5px;} 
             </style>
         </div>	
 	</div>
