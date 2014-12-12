@@ -5,8 +5,10 @@
  			#nav { background-color:#78147F;}
 			div>ul>li>a{ margin-right:10px;color:white; }
 			div>ul>li>a:hover{ color:#78147F; }
+			h1>a{ margin-right:10px;color:white; }
+			h1>a:hover{ color:white; text-decoration:none; }
         </style>
-		<div id="title"> <h1 style="font-size: 50px; float: left;">eventIT</h1>
+		<div id="title"> <h1 style="font-size: 50px; float: left;"><a href="index.php">eventIT</a></h1>
             <style>	#title { color:white; text-align:left; padding:5px;} 
             </style>
 		<div style="float:right; margin-top: 25px;">
@@ -22,6 +24,7 @@
         </form>
         <?php } else { ?>
             <ul class="nav navbar-nav navbar-right">
+				<li><a href="clubs.php">Browse Clubs</a></li>
 				<li><a href="profile.php">Profile</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
