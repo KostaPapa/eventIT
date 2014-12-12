@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+session_start();
+?>
 <html>
   <head>
   <?php require_once('header.php') ?>

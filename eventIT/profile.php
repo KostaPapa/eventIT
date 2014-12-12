@@ -9,6 +9,13 @@ session_start();
   <?php require_once('header.php'); ?>
   <style>
 	.container{padding-left:0px; padding-right:0px;}
+			input{background-color:purple;
+			color: white;
+			font-size: 20px;
+			border-radius: 5px;
+			border-size: 0px;
+			margin-left: 15px;
+			}
   </style>
 </head>
 <body style="background-color:#E5E4E2">
@@ -17,6 +24,7 @@ session_start();
   <b><h1><?php echo $_SESSION["name"]; ?></h2></b><br>
   <b>School: </b><?php echo $_SESSION["school"]; ?><br>
   <b>Email: </b><?php echo $_SESSION["email"]; ?><br><br>
+  
   <?php
   if(isset($_SESSION['name'])) {
   	echo "<h2>Clubs</h2>";
@@ -29,8 +37,9 @@ session_start();
 	    $stmt -> bind_result($cname);
 
 	    for ($i = 0; $i < $stmt->num_rows; ++$i) {
+			echo $_SESSION['email'];
 		    if ($stmt -> fetch()) {
-		    	echo $cname;
+		    	echo "<form action='clubpage.php' method='get'><input id='club' type='submit' name = 'club'    value = '".$cname."'></form>";
 				echo"<br>";
 		    }
 		}

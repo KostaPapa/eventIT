@@ -10,7 +10,7 @@ if($_GET["club"]){
   			$stmt -> bind_result($cname, $email, $description);
   			if ($stmt -> fetch()) {
   				$_SESSION["cname"] = $cname;
-  				$_SESSION["email"] = $email;
+  				$_SESSION["contactEmail"] = $email;
   				$_SESSION["description"] = $description;				
   			}
   			$stmt->close();
@@ -32,7 +32,7 @@ if($_GET["club"]){
   <div class="container" style="background-color:white;" >
   <?php if($_GET["club"]){ ?>
   <b><h2><?php echo $_SESSION["cname"]; ?></h2></b><br>
-  <b>Email: </b><?php echo $_SESSION["email"]; ?><br>
+  <b>Email: </b><?php echo $_SESSION["contactEmail"]; ?><br>
   <b>Description: </b><?php echo $_SESSION["description"]; ?><br><br>
   <b><h3>Upcoming Events</h3><b>
   <?php 

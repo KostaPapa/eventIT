@@ -7,7 +7,14 @@ session_start();
 <html>
 <head>
   <?php require_once('header.php'); ?>
-
+	<style>
+		input{background-color:purple;
+			color: white;
+			font-size: 20px;
+			border-radius: 5px;
+			border-size: 0px;
+			}
+	</style>
 </head>
 <body style="background-color:#E5E4E2">
 	<?php require_once('nav.php');?>
