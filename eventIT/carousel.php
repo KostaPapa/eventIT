@@ -9,33 +9,35 @@
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
           <li data-target="#carousel-example-generic" data-slide-to="3"></li>
           </ol>
-
+		<style>
+			.carousel-caption{font-size: 40px; text-outline: 2px 2px #ff0000;}
+		</style>
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
           <div class="item active">
             <img src="images/carousel4.jpg" alt="">
             <div class="carousel-caption">
-            Popular Event 1
+            Career Fair
             </div>
           </div>
           <div class="item">
             <img src="images/carousel1.jpg" alt="">
             <div class="carousel-caption">
-            Popular Event 2
+            Aeronautical Engineering Club
             </div>
           </div>
 
           <div class="item">
             <img src="images/carousel2.jpg" alt="">
             <div class="carousel-caption">
-            Popular Event 3
+            MetroTech Music
             </div>
           </div>
 
           <div class="item">
             <img src="images/carousel3.jpg" alt="">
             <div class="carousel-caption">
-            Popular Event 4
+            Poly Civil Engineering
             </div>
           </div>
           

@@ -9,7 +9,7 @@ session_start();
   <?php require_once('header.php'); ?>
 
 </head>
-<body>
+<body style="background-color:#E5E4E2">
 	<?php require_once('nav.php');?>
 		<div class="container" style="background-color:white;" >
 	<?php

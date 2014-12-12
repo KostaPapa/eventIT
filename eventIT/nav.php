@@ -3,8 +3,8 @@
 		<link rel="stylesheet" type="text/css" href="css/nav.css" />
 		<style>			
  			#nav { background-color:#78147F;}
-			div>ul>li>a{ margin-right:10px;color:white; }
-			div>ul>li>a:hover{ color:#78147F; }
+			a.navLink{ margin-right:10px;color:white; }
+			a.navLink:hover{ color:#78147F; }
 			h1>a{ margin-right:10px;color:white; }
 			h1>a:hover{ color:white; text-decoration:none; }
 			.manageClub{ background-color: green; border-radius: 25px;}
@@ -22,6 +22,7 @@
                 <input name="password" type="password" placeholder="Password" class="form-control">
             </div>
                 <button type="submit" class="btn btn-success">Log In</button>
+				<a href="signup.php" class="btn btn-success">Sign Up</a>
         </form>
 		
         <?php } else { ?>
@@ -39,9 +40,9 @@
 				<?php if($numberofrows > 0){?>
 				<li><a href="clubManagement.php" class="btn btn-success">Manage Club</a></li>
 				<?php }?>
-				<li><a href="clubs.php">Browse Clubs</a></li>
-				<li><a href="profile.php">Profile</a></li>
-                <li><a href="logout.php">Log Out</a></li>
+				<li><a href="clubs.php"class="navLink">Browse Clubs</a></li>
+				<li><a href="profile.php"class="navLink">Profile</a></li>
+                <li><a href="logout.php"class="navLink">Log Out</a></li>
             </ul>
         <?php } ?>
 		</div>

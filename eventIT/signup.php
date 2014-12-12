@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+  <?php require_once('header.php') ?>
     <title>event it</title>
     <meta charset="utf-8" />
 	<style>
@@ -17,7 +18,7 @@
 			margin: 100px auto 50px auto;
 			padding: 20px;
 			position: relative;
-			background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAMAAAB883U1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRF7+/v7u7u////REBVnAAAAAN0Uk5T//8A18oNQQAAABZJREFUeNpiYGJiYmBiYgRiBhAGCDAAALsAFJhiJ+UAAAAASUVORK5CYII=);
+			background-color: purple;
 			border: 1px solid #ccc;
 			-moz-border-radius: 3px;
 			-webkit-border-radius: 3px; 
@@ -51,29 +52,27 @@
 
 		#signup h1 {
 			position: relative;
-			font: italic 1em/3.5em 'trebuchet MS',Arial, Helvetica;
-			color: #999;
+			color: purple;
+			background-color: white;
 			text-align: center;
 			margin: 0 0 20px;
+			height: 50px;
+			border-radius: 5px;
 		}
 
 		#signup h1::before,
 		#signup h1::after{
 			content:'';
 			position: absolute;
-			border: 1px solid rgba(0,0,0,.15);
-			top: 10px;
-			bottom: 10px;
+			border: 10px solid rgba(128,0,128,.15);
+			top: 0px;
+			bottom: 0px;
 			left: 0;
 			right: 0;
+			border-radius: 5px;
 		}
 
-		#signup h1::after{
-			top: 0;
-			bottom: 0;
-			left: 10px;
-			right: 10px;
-		}
+		
 
 		/*------------------------------*/
 
@@ -173,7 +172,8 @@
   </head>
 
   <body>
-
+	<?php require_once('nav.php') ?>
+	<div class="container">
   	<form id="signup">
 		<h1>event it</h1>
 		<input type="email" placeholder="john.doe@email.com" required="">
@@ -182,7 +182,7 @@
 		<button type="submit">Sign up for free!</button>	
 	</form>
 
-	
+	</div>
   </body>
 
 </html>

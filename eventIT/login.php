@@ -15,9 +15,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       $_SESSION['school'] = $school;
       header('Location: index.php');
     }
+	else{
+	header('Location: index.php');
+}
   }
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +28,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </head>
 <body>
   <link href="signin.css" rel="stylesheet">
-  <?php require_once('navbar.php'); ?>
+  <?php require_once('nav.php'); ?>
   <div class="container" style="padding-top: 60px;">
     <form action="login.php" method="POST" class="form-signin">
       <h2 class="form-signin-heading">Please sign in</h2>

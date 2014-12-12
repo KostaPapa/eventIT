@@ -14,9 +14,10 @@ session_start();
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-    </body>
-    <!-- Footer -->
-    <footer>
+		<footer>
             <?php require_once('footer.php'); ?>
-    </footer>
+		</footer>
+    </body>
+
+
 </html>
