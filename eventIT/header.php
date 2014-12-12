@@ -15,6 +15,11 @@ if( ! ini_get('date.timezone') )
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/full-slider.css" rel="stylesheet">
+	  <style>
+		.container{padding-left:0px; padding-right:0px;}
+		.carousel{margin-left: -15px; margin-right: -15px;}
+		.row{margin-left: 0px; margin-right: 0px;}
+	  </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

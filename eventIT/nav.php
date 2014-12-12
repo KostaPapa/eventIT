@@ -1,7 +1,8 @@
 <div class="container">
 	<div id="nav">
-		<style>
- 			#nav { background-color:#78147F; }
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<style>			
+ 			#nav { background-color:#78147F;}
 			div>ul>li>a{ margin-right:10px;color:white; }
 			div>ul>li>a:hover{ color:#78147F; }
         </style>
@@ -21,6 +22,7 @@
         </form>
         <?php } else { ?>
             <ul class="nav navbar-nav navbar-right">
+				<li><a href="profile.php">Profile</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
         <?php } ?>

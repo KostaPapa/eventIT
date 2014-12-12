@@ -8,11 +8,12 @@ session_start();
 <head>
   <?php require_once('header.php'); ?>
   <style>
-  body {padding-top: 60px}
+	.container{padding-left:0px; padding-right:0px;}
   </style>
 </head>
-<body>
-  <?php require_once('navbar.php'); ?>
+<body style="background-color:#E5E4E2">
+  <?php require_once('nav.php'); ?>
+  <div class="container" style="background-color:white;" >
   <b><h1><?php echo $_SESSION["name"]; ?></h2></b><br>
   <b>School: </b><?php echo $_SESSION["school"]; ?><br>
   <b>Email: </b><?php echo $_SESSION["email"]; ?><br><br>
@@ -30,6 +31,7 @@ session_start();
 	    for ($i = 0; $i < $stmt->num_rows; ++$i) {
 		    if ($stmt -> fetch()) {
 		    	echo $cname;
+				echo"<br>";
 		    }
 		}
 		$stmt->close();
@@ -57,3 +59,5 @@ session_start();
 } else {
 	echo "You need to sign in.";
 }
+?>
+</div><!-- /.container --> 
