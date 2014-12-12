@@ -10,6 +10,15 @@
 		</style>	
 		<?php
 			include "mysql.php";
+			//Querying for the number of rows
+			$rowQuery = "select count(*) 
+							from event 
+								where edate > '2015-03-06 01:20:00'";
+			$stmt = $mysqli->query($rowQuery);
+			$stuff = $stmt->fetch_assoc();
+			$numberofrows = $stuff['count(*)'];
+			echo $numberofrows;
+			$_SESSION['numOfUpcomingEvents'] = $numberofrows;
 			//querying events that in ascending order, but only events who's date is in the future
 			$query = "select cname, ename, edate, location, description
 								from event
@@ -22,9 +31,11 @@
 			echo"<div class=\"UpcomingHeading\">Upcoming Events</div>";
 			//print_r($date);
 			$stmt->execute();
+			
 			$stmt->bind_result($cname, $ename, $edate, $location, $description);
+			
 			$i = 0;
-			while($stmt->fetch() && $i < 4){
+			while($stmt->fetch() && ($i < 5 || $i < $numberofrows)){			
 				$i++;
 				if(strnatcmp($date, $edate) <= 0){
 					echo"<div class=\"col-lg-12 col-lg-offset-0 event\">";
@@ -41,6 +52,7 @@
 					echo"</div><!-- /.col-md-6 -->";
 				}
 			}
+			$_SESSION['upcomingEventsIterator'] = $i;
 		?>
   </div><!-- /.row --> 
 </div><!-- /.container --> 

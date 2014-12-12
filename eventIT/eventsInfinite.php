@@ -7,23 +7,43 @@
 			.clear{clear: both;}
 			.UpcomingHeading{color: #78147F; font-size: 60px;font-weight: bold;}
 			.floatRight{float:right;}
+			ul{padding-left:0px;}
 		</style>	
 		<?php
 			include "mysql.php";
+			$datetime = new DateTime();
+			$date = $datetime->format('Y-m-d H:i:s');
+			//Querying for the number of rows
+			$rowQuery = "select count(*) 
+							from event 
+								where edate > ? 
+									limit 5";
+			$stmt = $mysqli->prepare($rowQuery);		
+			$stmt->bind_param('i', $date);				
+			$stmt->execute();
+			$stmt->bind_result($numberofrows);	
+			$stmt->fetch();
+			$stmt->close();
+			print($numberofrows);
+			$_SESSION['numOfUpcomingEvents'] = $numberofrows;
 			//querying events that in ascending order, but only events who's date is in the future
 			$query = "select cname, ename, edate, location, description
 								from event
 									where edate > ?
 										order by edate asc";
-			$datetime = new DateTime();
-			$date = $datetime->format('Y-m-d H:i:s');
+			
 			$stmt = $mysqli->prepare($query);
 			$stmt->bind_param('s', $date);
 			echo"<div class=\"UpcomingHeading\">Upcoming Events</div>";
 			//print_r($date);
 			$stmt->execute();
+			
 			$stmt->bind_result($cname, $ename, $edate, $location, $description);
-			while($stmt->fetch()){
+			
+			$i = 0;
+			echo"<ul class=\"items\">";
+			while($stmt->fetch() && ($i < 5 && $i < $numberofrows)){			
+				$i++;
 				if(strnatcmp($date, $edate) <= 0){
 					echo"<div class=\"col-lg-12 col-lg-offset-0 event\">";
 					echo"<div class=\"eventName\">$ename</div>";
@@ -39,21 +59,19 @@
 					echo"</div><!-- /.col-md-6 -->";
 				}
 			}
-			
-
+			$_SESSION['upcomingEventsIterator'] = $i;
 		?>
-		<ul class="items">
-				<li>content</li>
-				<li>content</li>
-				...
-			</ul>
-			<div id="lastPostsLoader"></div>
+		<script type="text/javascript" src="js/jquery1.6.2.js"></script>
+
+
 		<script type="text/javascript">
+
 		$(document).ready(function(){
+
 			function lastAddedLiveFunc()
 			{
-				$('div#lastPostsLoader').html('<img src="bigLoader.gif"/>');
-		 
+				$('div#lastPostsLoader').html('<img src="bigLoader.gif">');
+
 				$.get("loadmore.php", function(data){
 					if (data != "") {
 						//console.log('add data..');
@@ -62,20 +80,21 @@
 					$('div#lastPostsLoader').empty();
 				});
 			};
-		 
-			//lastAddedLiveFunc();
-			$(window).scroll(function(){
-		 
-				var wintop = $(window).scrollTop(), docheight = $(document).height(), winheight = $(window).height();
-				var  scrolltrigger = 0.95;
-		 
-				if  ((wintop/(docheight-winheight)) > scrolltrigger) {
+
+		  //lastAddedLiveFunc();
+		  $(window).scroll(function(){
+
+			  var wintop = $(window).scrollTop(), docheight = $(document).height(), winheight = $(window).height();
+			  var  scrolltrigger = 0.95;
+
+			  if  ((wintop/(docheight-winheight)) > scrolltrigger) {
 				 //console.log('scroll bottom');
 				 lastAddedLiveFunc();
-				}
-			});
+			  }
+		  });
 		});
 		</script>
+		<div id="lastPostsLoader"></div>
 
   </div><!-- /.row --> 
 </div><!-- /.container --> 

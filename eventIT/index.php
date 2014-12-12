@@ -15,7 +15,7 @@ session_start();
         <!-- Page Content -->
        <p><p></p></p>
         <!-- Events -->
-        <?php require_once('events.php'); ?>
+        <?php require_once('eventsInfinite.php'); ?>
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
