@@ -7,6 +7,7 @@
 			div>ul>li>a:hover{ color:#78147F; }
 			h1>a{ margin-right:10px;color:white; }
 			h1>a:hover{ color:white; text-decoration:none; }
+			.manageClub{ background-color: green; border-radius: 25px;}
         </style>
 		<div id="title"> <h1 style="font-size: 50px; float: left;"><a href="index.php">eventIT</a></h1>
             <style>	#title { color:white; text-align:left; padding:5px;} 
@@ -22,8 +23,22 @@
             </div>
                 <button type="submit" class="btn btn-success">Log In</button>
         </form>
+		
         <?php } else { ?>
+			<?php 
+			include "mysql.php";
+			$rowQuery = "select count(*) from organizes where corg_email = ?";
+			$stmt = $mysqli->prepare($rowQuery);		
+			$stmt->bind_param('i', $_SESSION['email']);				
+			$stmt->execute();
+			$stmt->bind_result($numberofrows);	
+			$stmt->fetch();
+			$stmt->close();
+			?>
             <ul class="nav navbar-nav navbar-right">
+				<?php if($numberofrows > 0){?>
+				<li><a href="clubManagement.php" class="btn btn-success">Manage Club</a></li>
+				<?php }?>
 				<li><a href="clubs.php">Browse Clubs</a></li>
 				<li><a href="profile.php">Profile</a></li>
                 <li><a href="logout.php">Log Out</a></li>
