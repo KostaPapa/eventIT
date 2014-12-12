@@ -24,7 +24,6 @@
 			$stmt->bind_result($numberofrows);	
 			$stmt->fetch();
 			$stmt->close();
-			print($numberofrows);
 			$_SESSION['numOfUpcomingEvents'] = $numberofrows;
 			//querying events that in ascending order, but only events who's date is in the future
 			$query = "select cname, ename, edate, location, description
