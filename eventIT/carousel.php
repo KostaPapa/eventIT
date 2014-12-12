@@ -13,27 +13,27 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
           <div class="item active">
-            <img src="http://cocoona.ae/blog/wp-content/uploads/banner2.jpeg" alt="">
+            <img src="images/carousel4.jpg" alt="">
             <div class="carousel-caption">
             Popular Event 1
             </div>
           </div>
           <div class="item">
-            <img src="http://1.bp.blogspot.com/-knwPudXrHSY/T11CSesAfKI/AAAAAAAAAJ8/Yhr-q6rGlqc/s1600/!.PNG" alt="">
+            <img src="images/carousel1.jpg" alt="">
             <div class="carousel-caption">
             Popular Event 2
             </div>
           </div>
 
           <div class="item">
-            <img src="http://www.rossjames.net/port/fas1/Ross-James_fashion1_61.jpg" alt="">
+            <img src="images/carousel2.jpg" alt="">
             <div class="carousel-caption">
             Popular Event 3
             </div>
           </div>
 
           <div class="item">
-            <img src="http://www.nicciwelsh.com/wp-content/uploads//2013/01/banner3.jpg" alt="">
+            <img src="images/carousel3.jpg" alt="">
             <div class="carousel-caption">
             Popular Event 4
             </div>
