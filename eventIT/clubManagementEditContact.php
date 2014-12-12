@@ -28,9 +28,11 @@ session_start();
 				$stmt->fetch();
 				$stmt->close();
 				
-				echo"<b><h2 style='display: inline; margin-top: 20px;'>$cname</h2></b> <a href='clubManagementEditName.php' class='btn btn-success up5px'>edit</a><br><br>";
-				echo"<b>Contact Information: </b> $contactEmail <a href='clubManagementEditContact.php' class='btn btn-success'>edit</a><br>";
-				echo"<b>Description: </b> $description <a href='clubManagementEditDescription.php' class='btn btn-success'>edit</a>";
+				echo"<b><h2 style='display: inline; margin-top: 20px;'>$cname</h2></b> <a href='clubManagementEditName.php' class='btn btn-success up5px'>edit</a><br><br>";?>
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+				<b>Contact Information: </b><input type="text" name="contact" value="<?php echo $contactEmail;?>"><input type="submit" name="submit" value="Submit"> 
+				</form>
+				<?php echo"<b>Description: </b> $description <a href='clubManagementEditDescription.php' class='btn btn-success'>edit</a>";
 			?>
 		</div>
 		<footer>
