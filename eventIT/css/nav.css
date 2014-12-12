@@ -1,8 +1,8 @@
 @font-face {
-	font-family: lobster, sans-serif;
-	src: url('../fonts/lobster-regular-webfont.woff2') format('woff');
+	font-family: lobster;
+	src: url('../fonts/lobster.woff') format('woff');
 }
 h1{
-font-family: lobster;
+font-family: lobster, sans-serif;
 margin-left: 5px;
 }

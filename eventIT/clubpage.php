@@ -26,12 +26,10 @@ if($_GET["club"]){
 <html>
 <head>
   <?php require_once('header.php'); ?>
-  <style>
-  body {padding-top: 60px}
-  </style>
 </head>
 <body>
-  <?php require_once('navbar.php'); ?>
+  <?php require_once('nav.php'); ?>
+  <div class="container" style="background-color:white;" >
   <?php if($_GET["club"]){ ?>
   <b><h2><?php echo $_SESSION["cname"]; ?></h2></b><br>
   <b>Email: </b><?php echo $_SESSION["email"]; ?><br>
