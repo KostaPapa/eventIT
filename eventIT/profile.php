@@ -37,7 +37,7 @@ session_start();
 	    $stmt -> bind_result($cname);
 
 	    for ($i = 0; $i < $stmt->num_rows; ++$i) {
-			echo $_SESSION['email'];
+			//echo $_SESSION['email'];
 		    if ($stmt -> fetch()) {
 		    	echo "<form action='clubpage.php' method='get'><input id='club' type='submit' name = 'club'    value = '".$cname."'></form>";
 				echo"<br>";
