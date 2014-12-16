@@ -5,7 +5,7 @@ session_start();
 if($_GET["event"]){
   	if(isset($_SESSION['name'])){
   		if ($stmt = $mysqli -> prepare("SELECT cname, contact_email, description FROM club WHERE cname = ?")){
-  			$stmt -> bind_param("s", $_GET['club']);
+  			$stmt -> bind_param("s", $_GET['event']);
   			$stmt -> execute();
   			$stmt -> bind_result($cname, $email, $description);
   			if ($stmt -> fetch()) {
