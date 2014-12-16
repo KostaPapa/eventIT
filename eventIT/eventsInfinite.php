@@ -8,6 +8,8 @@
 			.UpcomingHeading{color: #78147F; font-size: 60px;font-weight: bold;}
 			.floatRight{float:right;}
 			ul{padding-left:0px;}
+			a{color: white;}
+			a:hover{color: white;text-decoration:none;}
 		</style>	
 		<?php
 			include "mysql.php";
@@ -46,7 +48,7 @@
 				if(strnatcmp($date, $edate) <= 0){
 					echo"<div class=\"col-lg-12 col-lg-offset-0 event\">";
 					echo"<div class=\"eventName\">$ename</div>";
-					echo"<div class=\"clubName\">$cname</div>";
+					echo"<div class=\"clubName\"><a href = \"clubpage.php?club=Performing+Art+$cname\">$cname</a></div>";
 					echo"<div class=\"clear\"></div>";
 					echo"<div class=\"eventDate\"><b>Time: </b>$edate</div>";
 					echo"<div class=\"eventLocation\"><b>Location: </b>$location</div>";
